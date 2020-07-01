@@ -5,8 +5,8 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse('<h1>address list</h1>')
+    return render(request, 'address/home.html', {'title': 'Listagem'})
 
 
 def register(request):
-    return HttpResponse('<h1>register an address</h1>')
+    return render(request, 'address/register.html', {'title': 'Cadastro'})
