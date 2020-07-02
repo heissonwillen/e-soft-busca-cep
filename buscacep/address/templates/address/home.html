@@ -1,5 +1,20 @@
 {% extends "address/base.html" %}
 
 {% block content %}
-  <h1>Home</h1>
+  <h1>Listagem de endereços</h1>
+  {% for address in addresses %}
+    <article class="media content-section">
+      <div class="media-body">
+        <h3>{{ address.street }} ({{ address.number }})</h3>
+        <ul>
+          <li>Cidade: <b>{{ address.city }}</b> </li>
+          <li>UF: <b>{{ address.uf }}</b> </li>
+          <li>Bairro: <b>{{ address.neighborhood }}</b> </li>
+          <li>Complemento: <b>{{ address.complement }}</b> </li>
+          <li>CEP: <b>{{ address.cep }}</b> </li>
+          <li>Descricão: <b>{{ address.description }}</b> </li>
+        </ul>
+      </div>
+    </article>
+  {% endfor %}
 {% endblock content %}
