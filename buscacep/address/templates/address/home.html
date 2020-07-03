@@ -2,40 +2,33 @@
 
 {% block content %}
   <h1>Listagem de endereços</h1>
-  {% for address in addresses %}
-    <article class="media content-section">
-      <div class="media-body">
-        <h3>{{ address.street }} ({{ address.number }})</h3>
-        <ul>
-          <li>Cidade: <b>{{ address.city }}</b> </li>
-          <li>UF: <b>{{ address.uf }}</b> </li>
-          <li>Bairro: <b>{{ address.neighborhood }}</b> </li>
-          <li>Complemento: <b>{{ address.complement }}</b> </li>
-          <li>CEP: <b>{{ address.cep }}</b> </li>
-          <li>Descricão: <b>{{ address.description }}</b> </li>
-        </ul>
-      </div>
-    </article>
-  {% endfor %}
 
-  {% if is_paginated %}
-      {% if page_obj.has_previous %}
-          <a class="btn btn-outline-dark mb-4" href="?page=1">Primeiro</a>
-          <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
-      {% endif %}
-
-      {% for num in page_obj.paginator.page_range %}
-          {% if page_obj.number == num %}
-              <a class="btn btn-dark mb-4" href="?page={{ num }}">{{ num }}</a>
-          {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-              <a class="btn btn-outline-dark mb-4" href="?page={{ num }}">{{ num }}</a>
-          {% endif %}
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col"> Cep</th>
+        <th scope="col"> Endereço</th>
+        <th scope="col"> Número</th>
+        <th scope="col"> Complemento</th>
+        <th scope="col"> Bairro</th>
+        <th scope="col"> Cidade</th>
+        <th scope="col"> Uf</th>
+        <th scope="col"> Descricão</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for address in addresses %}
+      <tr>
+        <th scope="row"> {{ address.cep }}</th>
+        <td>{{ address.street }}</td>
+        <td>{{ address.number }}</td>
+        <td>{{ address.complement }}</td>
+        <td>{{ address.neighborhood }}</td>
+        <td>{{ address.city }}</td>
+        <td>{{ address.uf }}</td>
+        <td>{{ address.description }}</td>
+      </tr>
       {% endfor %}
-
-      {% if page_obj.has_next %}
-          <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.next_page_number }}">Próximo</a>
-          <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.paginator.num_pages }}">Último</a>
-      {% endif %}
-
-  {% endif %}
+    </tbody>
+  </table>
 {% endblock content %}

@@ -4,7 +4,7 @@ from django.urls import reverse
 # Create your models here.
 
 class Address(models.Model):
-    cep = models.CharField(max_length=9)
+    cep = models.CharField(max_length=9, primary_key=True)
     street = models.CharField(max_length=100)
     number = models.CharField(max_length=10)
     neighborhood = models.CharField(max_length=100)

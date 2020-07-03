@@ -2,11 +2,12 @@
 
 {% block content %}
 <div class="content-section">
-    <form method="post" >
+    <form method="post" action="{% url 'address-create' %}">
         {% csrf_token %}
 
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Cadastro de endereço</legend>
+            {{ form.cep.errors }}
             {{ form.as_p }}
         </fieldset>
         <div class="form-group">
@@ -36,7 +37,7 @@
               $("#id_city").val("");
               $("#id_uf").val("");
               $("#id_complemento").val("");
-              console.log('Erro: ' + err.message);
+              console.log('Error: ' + err.message);
             });
           });
         });
