@@ -1,0 +1,12 @@
+[
+  {
+    "cep": "30190-906",
+    "street": "Rua dos Tupis 485",
+    "number": "485",
+    "neighborhood": "Centro",
+    "city": "Belo Horizonte",
+    "complement": "Complemento da Rua dos Tupis",
+    "uf": "MG",
+    "description": "Descricão genérica"
+  }
+]

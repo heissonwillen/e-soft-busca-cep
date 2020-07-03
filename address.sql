@@ -1,6 +1,7 @@
 CREATE TABLE "address_address" (
   "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
-  "cep" varchar(8) NOT NULL, "street" text NOT NULL,
+  "cep" varchar(9) NOT NULL,
+  "street" text NOT NULL,
   "number" varchar(10) NOT NULL,
   "neighborhood" text NOT NULL,
   "city" text NOT NULL,
