@@ -41,4 +41,5 @@ O arquivo .sql utilzado para a criação do banco de dados da aplicação em que
 
 
 ## Capturas de tela
-TODO
+![Captura de tela](https://github.com/heissonwillen/e-soft-busca-cep/blob/master/img/screenshot00.png)
+![Captura de tela](https://github.com/heissonwillen/e-soft-busca-cep/blob/master/img/screenshot01.png)
