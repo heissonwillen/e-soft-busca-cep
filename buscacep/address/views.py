@@ -1,74 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-
-addresses = [
-    {
-        'cep': '123123123',
-        'street': 'Rua Exemplo',
-        'number': '123',
-        'neighborhood': 'Bairro Exemplo',
-        'city': 'Cidade Exemplo',
-        'uf': 'Sao Paulo',
-        'description': 'Descricão Descricão Descricão Descricão Descricão Descricão ',
-        'complement': 'Complemento'
-    },
-    {
-        'cep': '123123123',
-        'street': 'Rua Exemplo',
-        'number': '123',
-        'neighborhood': 'Bairro Exemplo',
-        'city': 'Cidade Exemplo',
-        'uf': 'Sao Paulo',
-        'description': 'Descricão Descricão Descricão Descricão Descricão Descricão ',
-        'complement': 'Complemento'
-    },
-    {
-        'cep': '123123123',
-        'street': 'Rua Exemplo',
-        'number': '123',
-        'neighborhood': 'Bairro Exemplo',
-        'city': 'Cidade Exemplo',
-        'uf': 'Sao Paulo',
-        'description': 'Descricão Descricão Descricão Descricão Descricão Descricão ',
-        'complement': 'Complemento'
-    },
-    {
-        'cep': '123123123',
-        'street': 'Rua Exemplo',
-        'number': '123',
-        'neighborhood': 'Bairro Exemplo',
-        'city': 'Cidade Exemplo',
-        'uf': 'Sao Paulo',
-        'description': 'Descricão Descricão Descricão Descricão Descricão Descricão ',
-        'complement': 'Complemento'
-    },
-    {
-        'cep': '123123123',
-        'street': 'Rua Exemplo',
-        'number': '123',
-        'neighborhood': 'Bairro Exemplo',
-        'city': 'Cidade Exemplo',
-        'uf': 'Sao Paulo',
-        'description': 'Descricão Descricão Descricão Descricão Descricão Descricão ',
-        'complement': 'Complemento'
-    },
-    {
-        'cep': '123123123',
-        'street': 'Rua Exemplo',
-        'number': '123',
-        'neighborhood': 'Bairro Exemplo',
-        'city': 'Cidade Exemplo',
-        'uf': 'Sao Paulo',
-        'description': 'Descricão Descricão Descricão Descricão Descricão Descricão ',
-        'complement': 'Complemento'
-    },
-]
+from .models import Address
 
 
 def home(request):
     context = {
-        'addresses': addresses,
+        'addresses': Address.objects.all(),
         'title': 'Listagem',
     }
     return render(request, 'address/home.html', context)
