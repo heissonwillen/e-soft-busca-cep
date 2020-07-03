@@ -4,9 +4,9 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='address-home'),
+    path('list', views.home, name='address-home'),
     # path('register/', AddressCreateView.as_view(),  name='address-register'),
     # path('register/', views.register,  name='address-register'),
-    path('register/', views.AddressFormView.as_view(),  name='address-register'),
+    path('', views.AddressFormView.as_view(),  name='address-register'),
     path('create/', views.create, name='address-create'),
 ]

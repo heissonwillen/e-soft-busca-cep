@@ -1,12 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Address
-from django.shortcuts import redirect
 from django.urls import reverse_lazy
 
-
-
-from django.views.generic import ListView, CreateView, UpdateView, FormView
-
+from django.views.generic import FormView
 from .forms import AddressForm
 
 
@@ -16,35 +12,6 @@ def home(request):
     }
     return render(request, 'address/home.html', context)
 
-
-# class AddressCreateView(CreateView):
-#     model = Address
-#     template_name = 'address/register.html'
-#     fields = [
-#         'cep',
-#         'street',
-#         'number',
-#         'neighborhood',
-#         'city',
-#         'uf',
-#         'description',
-#         'complement'
-#     ]
-#
-#     def form_valid(self, form):
-#         print(form)
-#         return super().form_valid(form)
-
-# class AddressListView(ListView):
-#     model = Address
-#     template_name = 'address/home.html'
-#     context_object_name = 'addresses'
-#     paginate_by = 2
-
-
-# def register(request):
-#     form = AddressForm
-#     return render(request, 'address/register.html', {'form': form})
 
 def create(request):
     if request.method == "POST":
@@ -71,9 +38,7 @@ def create(request):
                     description = form.cleaned_data['description'],
                     complement = form.cleaned_data['complement']
                 )
-
-        else:
-            print(form.errors)
+            return redirect('address-home')
     else:
         form = AddressForm()
     return render(request, 'address/register.html', {'form': form})
