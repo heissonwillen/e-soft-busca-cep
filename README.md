@@ -34,7 +34,7 @@ Sistema de cadastro e listagem de endereços com uso de Python e Django.
     python manage.py runserver
     ```
 
-  - Acesse a aplicação em sua máquina acessando: [http://localhost:8000/](http://localhost:8000/)
+  - Acesse a aplicação em sua máquina: [http://localhost:8000/](http://localhost:8000/)
 
 ## Esquema de banco de dados
 O arquivo .sql utilzado para a criação do banco de dados da aplicação em questão pode ser vizualizado [aqui](https://github.com/heissonwillen/e-soft-busca-cep/blob/master/address.sql).
