@@ -1,7 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Address
+
+from django.urls import reverse_lazy
+from django.views.generic import FormView
 from django.views.generic import ListView, CreateView
+
+from .forms import AddressForm
 
 
 
@@ -35,6 +40,15 @@ class AddressCreateView(CreateView):
 
     def form_valid(self, form):
         return super().form_valid(form)
+
+
+
+
+
+# class AddressFormView(FormView):
+#     form_class = AddressForm
+#     success_url = reverse_lazy('adresses:address')
+#     template_name = 'address/register.html'
 
 
 def register(request):

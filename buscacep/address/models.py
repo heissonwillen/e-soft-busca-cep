@@ -10,8 +10,9 @@ class Address(models.Model):
     neighborhood = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     uf = models.CharField(max_length=100)
-    description = models.TextField()
-    complement = models.CharField(max_length=100)
+    description = models.TextField(blank=True)
+    complement = models.CharField(max_length=100, blank=True)
+
 
     def __str__(self):
         return f'{self.cep} - {self.street}'
