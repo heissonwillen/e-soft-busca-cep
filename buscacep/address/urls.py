@@ -1,7 +1,8 @@
 from django.urls import path, include
+from .views import AddressListView, AddressCreateView
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='address-home'),
-    path('register/', views.register,  name='address-register'),
+    path('', AddressListView.as_view(), name='address-home'),
+    path('register/', AddressCreateView.as_view(),  name='address-register'),
 ]

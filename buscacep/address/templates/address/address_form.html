@@ -1,0 +1,57 @@
+{% extends "address/base.html" %}
+
+{% block content %}
+  <h1></h1>
+  <div class="content-section">
+      <form method="post" >
+          {% csrf_token %}
+
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Registrar endereço</legend>
+              <div class="form-group">
+                {{ form.cep.errors }}
+                <label for="{{ form.cep.id_for_label }}">CEP: </label>
+                {{ form.cep }}
+              </div>
+              <div class="form-group">
+                {{ form.street.errors }}
+                <label for="{{ form.street.id_for_label }}">Rua: </label>
+                {{ form.street }}
+              </div>
+              <div class="form-group">
+                {{ form.number.errors }}
+                <label for="{{ form.number.id_for_label }}">Número: </label>
+                {{ form.number }}
+              </div>
+              <div class="form-group">
+                {{ form.neighborhood.errors }}
+                <label for="{{ form.neighborhood.id_for_label }}">Bairro: </label>
+                {{ form.neighborhood }}
+              </div>
+              <div class="form-group">
+                {{ form.city.errors }}
+                <label for="{{ form.city.id_for_label }}">Cidade: </label>
+                {{ form.city }}
+              </div>
+              <div class="form-group">
+                {{ form.uf.errors }}
+                <label for="{{ form.uf.id_for_label }}">UF: </label>
+                {{ form.uf }}
+              </div>
+              <div class="form-group">
+                {{ form.complement.errors }}
+                <label for="{{ form.complement.id_for_label }}">Complemento: </label>
+                {{ form.complement }}
+              </div>
+              <div class="form-group">
+                {{ form.description.errors }}
+                <label for="{{ form.description.id_for_label }}">Descricão: </label>
+                {{ form.description }}
+              </div>
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline" type="submit">Registrar</button>
+          </div>
+      </form>
+  </div>
+{% endblock content %}
